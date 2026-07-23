@@ -1,6 +1,7 @@
 from textual.app import App, ComposeResult
 from textual.containers import Grid
 from textual.widgets import Header, Footer, Static
+from widgets.clock_widget import ClockWidget
 
 
 class Dashboard(App):
@@ -26,6 +27,8 @@ class Dashboard(App):
             yield Static("Memory", id="memory")
             yield Static("Network", id="network")
             yield Static("Processes", id="processes")
+
+        yield ClockWidget("Loading...")
 
         yield Footer()
 
