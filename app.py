@@ -1,9 +1,11 @@
 from textual.app import App, ComposeResult
 from textual.containers import Grid
 from textual.widgets import Header, Footer, Static
+from textual.containers import Horizontal
+
 from widgets.clock_widget import ClockWidget
 from widgets.date_widget import DateWidget
-from textual.containers import Horizontal
+from widgets.cpu_widget import CpuWidget
 
 
 class Dashboard(App):
@@ -33,7 +35,7 @@ class Dashboard(App):
         yield Header()
 
         with Grid():
-            yield Static("CPU", id="cpu")
+            yield CpuWidget(id="cpu")
             yield Static("Memory", id="memory")
             yield Static("Network", id="network")
             yield Static("Processes", id="processes")
