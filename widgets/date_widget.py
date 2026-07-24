@@ -8,5 +8,6 @@ class DateWidget(Static):
             self.set_interval(1, self.update_clock)
 
     def update_clock(self):
-        current_date = datetime.now().strftime("%A")
-        self.update(f"[bold cyan]Day[/] : [bold white]{current_date}[/]")
+        day = datetime.now().strftime("%A")
+        date = datetime.now().strftime("%d %B %Y")
+        self.update(f"[bold cyan]Day[/] : [bold white]{day}[/]\n[bold cyan]Date[/] : [bold white]{date}[/]")
