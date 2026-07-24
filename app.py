@@ -2,6 +2,8 @@ from textual.app import App, ComposeResult
 from textual.containers import Grid
 from textual.widgets import Header, Footer, Static
 from widgets.clock_widget import ClockWidget
+from widgets.date_widget import DateWidget
+from textual.containers import Horizontal
 
 
 class Dashboard(App):
@@ -14,8 +16,16 @@ class Dashboard(App):
     }
 
     Static {
-        border: solid cyan;
+        border: solid red;
         padding: 1;
+    }
+
+    #clock {
+        width: 1fr;
+    }
+
+    #date {
+        width: 30;
     }
     """
 
@@ -28,7 +38,9 @@ class Dashboard(App):
             yield Static("Network", id="network")
             yield Static("Processes", id="processes")
 
-        yield ClockWidget("Loading...")
+        with Horizontal(id="status_bar"):
+            yield ClockWidget(id="clock")
+            yield DateWidget(id="date")
 
         yield Footer()
 
