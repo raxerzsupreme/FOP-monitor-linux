@@ -6,6 +6,7 @@ from textual.containers import Horizontal
 from widgets.clock_widget import ClockWidget
 from widgets.date_widget import DateWidget
 from widgets.cpu_widget import CpuWidget
+from widgets.memory_widget import MemWidget
 
 
 class Dashboard(App):
@@ -36,7 +37,7 @@ class Dashboard(App):
 
         with Grid():
             yield CpuWidget(id="cpu")
-            yield Static("Memory", id="memory")
+            yield MemWidget(id="memory")
             yield Static("Network", id="network")
             yield Static("Processes", id="processes")
 
