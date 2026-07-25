@@ -17,5 +17,5 @@ class CpuWidget(Static):
         self.update("CPU\n\n"
                     f"[bold cyan]Usage[/] : [bold white]{usage}%[/]\n"
                     f"[bold cyan]Cores[/] : [bold white]{physical} Physical[/] / [bold white]{logical} Logical[/]\n"
-                    f"[bold cyan]Frequency[/] : [bold white]{freq:.2f}[/]")
+                    f"[bold cyan]Frequency[/] : [bold white]{freq:.2f} Ghz[/]")
         
